@@ -34,18 +34,10 @@
         {
           "action": "VIEW",
           "data": [
-            {
-              "scheme": "https",
-              "host": "*.strem.io"
-            },
-            {
-              "scheme": "stremio"
-            }
+            { "scheme": "https", "host": "*.strem.io" },
+            { "scheme": "stremio" }
           ],
-          "category": [
-            "BROWSABLE",
-            "DEFAULT"
-          ]
+          "category": ["BROWSABLE", "DEFAULT"]
         }
       ]
     },
@@ -53,21 +45,13 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      [
-        "expo-screen-orientation",
-        {
-          "initialOrientation": "PORTRAIT"
-        }
-      ],
-      [
-        "expo-av",
-        {
-          "microphonePermission": "Allow Flyx to access your microphone."
-        }
-      ]
+      ["expo-screen-orientation", { "initialOrientation": "PORTRAIT" }],
+      ["expo-av", { "microphonePermission": "Allow Flyx to access your microphone." }]
     ],
     "extra": {
-  "eas": {
-    "projectId": "a8c20525-867a-4411-a6de-427d19db6fab"
+      "eas": {
+        "projectId": "a8c20525-867a-4411-a6de-427d19db6fab"
+      }
+    } 
   }
 }
