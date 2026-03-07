@@ -13,8 +13,9 @@ jobs:
       - name: Install EAS CLI
         run: npm install -g eas-cli
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Build APK
         run: eas build -p android --profile production --non-interactive
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
