@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/react-native";
 import React, { useEffect, useState } from 'react';
 import { View, ActivityIndicator, StyleSheet, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -16,6 +17,11 @@ import SettingsScreen from './src/screens/SettingsScreen';
 import DetailScreen from './src/screens/DetailScreen';
 import PlayerScreen from './src/screens/PlayerScreen';
 import IPTVPlayerScreen from './src/screens/IPTVPlayerScreen';
+
+// 1. Initialize Sentry (DSN must be replaced with your actual key)
+Sentry.init({
+  dsn: "https://928c99f592090058ef553e3778928a80@o4511000236785664.ingest.us.sentry.io/4511000291901440, 
+});
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -88,8 +94,8 @@ function TabNavigator() {
   );
 }
 
-// Root Stack Navigator
-export default function App() {
+// 2. Root Stack Navigator (Removed "export default" from here)
+function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -157,3 +163,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+// 3. Wrap and Export the App at the very end
+export default Sentry.wrap(App);
