@@ -14,6 +14,9 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "updates": {
+      "url": "https://u.expo.dev/a8c20525-867a-4411-a6de-427d19db6fab"
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.flyx.app"
@@ -46,7 +49,14 @@
     },
     "plugins": [
       ["expo-screen-orientation", { "initialOrientation": "PORTRAIT" }],
-      ["expo-av", { "microphonePermission": "Allow Flyx to access your microphone." }]
+      ["expo-av", { "microphonePermission": "Allow Flyx to access your microphone." }],
+      [
+        "@sentry/react-native/expo",
+        {
+          "organization": "alex-qop",
+          "project": "REPLACE_WITH_YOUR_SENTRY_PROJECT_NAME"
+        }
+      ]
     ],
     "extra": {
       "eas": {
